@@ -1,0 +1,201 @@
+@import "leaflet.less";
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+   body {margin:0;padding:0;}
+    #map {position: absolute;top:0;bottom:0;right:0;left:0;}
+
+
+    .count-icon {
+  background:#60587c;
+  border:1px solid #ffffff;
+  color:#fff;
+  font-weight:bold;
+  text-align:center;
+  border-radius:50%;
+  line-height:30px;
+  opacity:.7;
+  }
+
+
+  /*  -------------------------- my css starts here --------------------------  */
+
+.geocoder-control-suggestions .geocoder-control-suggestion.geocoder-control-selected,.geocoder-control-suggestions .geocoder-control-suggestion:hover{background:lightgray;border-color:lightgray}
+
+.leaflet-control-zoom {
+  display:inherit;
+}
+.leaflet-bar{
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  border-radius: 3px;
+  background-color:white;
+}
+#menu { position: absolute; 
+  top: 5px; 
+  right: 5px; 
+  width: auto; 
+  height:auto; 
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  z-index:10;
+  max-width:110px;
+  padding: 8px;
+  opacity:.85;
+}
+#menu a { 
+  position:relative;
+  margin:0 0 8px 0;
+  float: left;
+  vertical-align: baseline;
+  width: 100%;
+  padding: 6px 8px;
+  text-align: center;
+  font: bold 15px "Helvetica",Arial;
+  line-height: normal;
+  color: gray;
+  background: white;
+  /*box-shadow: 0 0 15px rgba(0,0,0,0.2);*/
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+ /* border:1px solid gray;*/
+}
+
+#menu a:hover { color: white; background: lightgray; }
+#menu a.selected  { color: white; background: gray; }
+
+#map {
+  width: 100%;
+  height: 100%;
+  background-color:#ffffff;
+  padding:0; margin:0;
+}
+.leaflet-popup-content{
+  margin: 8px 12px;
+  width:auto;
+  max-width:280px;
+
+}
+.leaflet-popup-content-wrapper {
+  border-radius:3px;
+  max-width:300px;
+  box-shadow: 0 1px 14px rgba(0,0,0,0.30);
+  text-align:center;
+}
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  /*box-shadow: 0 0px 2px rgba(0,0,0,0.4);*/
+  border-radius: 5px;
+  max-width:330px;
+  max-height:900px;
+}
+.legend {
+  text-align: left;
+  color: #555;
+    line-height:.5;
+}
+
+.Table
+ {
+  display: table;
+}
+
+.Row
+{
+/*  display: table-row;*/
+
+}
+.circles
+{
+  display: table-cell;
+  border: none;
+  /*padding-left: 5px;
+  padding-right: 5px;*/
+  height:auto;
+  width:38px;
+  vertical-align: middle;
+  text-align: center;
+}
+.text
+{
+  display: table-cell;
+  border: none;
+  /*padding-left: 5px;*/
+  padding-right: 5px;
+  width:auto;
+  height:auto;
+  vertical-align: middle;
+
+}
+.circlefill
+{
+ width: 20px;
+ height: 20px;
+ margin-right: 8px;
+ opacity: 0.7;
+ border-radius:50px;
+ background:#536879;
+ margin-left: auto;
+   /* margin-right: auto;*/
+
+}
+
+#totallegend {
+  display:none;
+}
+
+.bigheader {
+  line-height:1.2; font-size:15px; letter-spacing:-1; word-spacing:-1;  font-family: 'Helvetica', arial, sans-serif; font-weight: bold; text-align:center; padding:10px 0 5px 0;
+  border-bottom:1px solid gray; max-width:180px;
+}
+.mediumheader {
+  font-size:18px; letter-spacing:-1; word-spacing:-1;  font-family: 'Helvetica', arial, sans-serif; font-weight: bold; text-align:center; padding-bottom:5px;
+}
+.infobox{
+  position: absolute; 
+  top: 120px; 
+  left: 10px; 
+  width: auto; 
+  height:auto; 
+  background: white;
+  background: rgba(255,255,255,1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  border-radius: 3px;
+  z-index:10;
+  max-width:260px;
+  padding: 15px;
+}
+
+.lilheader {
+  font-size: 12px; text-transform:uppercase; font-family:'Helvetica Neue', arial; color: #AAA; padding:5px; text-align:center; letter-spacing:1px;
+}
+html, body{
+  height:100%; margin:0;}
+
+
+    #query {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: white;
+    padding: 1em;
+  }
+
+  #query select {
+    font-size: 16px;
+    width:100%;
+  }
+
+
+
