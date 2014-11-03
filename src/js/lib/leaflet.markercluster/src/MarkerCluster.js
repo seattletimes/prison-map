@@ -40,6 +40,7 @@ L.MarkerCluster = L.Marker.extend({
 	//Returns the count of how many child markers we have
 	getChildCount: function () {
 		return this._childCount;
+		
 	},
 
 	//Zoom to the minimum of showing all of the child markers, or the extents of this cluster
