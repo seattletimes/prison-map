@@ -17,7 +17,7 @@ var map = L.map('map').setView([39.8282, -98.5795], 5);
     L.esri.basemapLayer('Gray').addTo(map);
     L.esri.basemapLayer('GrayLabels').addTo(map);
 
- var prisons = L.esri.clusteredFeatureLayer('http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/st-pris/FeatureServer/0', {
+ var prisons = L.esri.clusteredFeatureLayer('http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/prisons-updated2/FeatureServer/0', {
    pointToLayer: function (geojson, latlng) {
       return L.marker(latlng, {
         icon: icons
@@ -44,7 +44,7 @@ var map = L.map('map').setView([39.8282, -98.5795], 5);
   //   },
   // }).addTo(map);
 
- 
+
 
 
   icons = L.divIcon({
@@ -53,16 +53,19 @@ var map = L.map('map').setView([39.8282, -98.5795], 5);
   });
 
     prisons.bindPopup(function (feature) {
-    return L.Util.template('<div class="bigheader">{Prison_name}</div><div style="padding:5px;"><strong>{City}, {state}</strong></div><div class="lilheader">Industries</div><div>{industry_1}, {industry_2}, {industry_3}, {industry_4}, {industry_5}, {industry_6}, {industry_7}, {industry_8}</div>', feature.properties);
+    return L.Util.template('<div class="bigheader">{Prison_name}</div><div style="padding:5px;"><strong>{City}, {state}</strong></div><div class="lilheader">Industries</div><div>{Industries}</div>', feature.properties);
   });
 
     var industry = document.getElementById('industry');
 
   industry.addEventListener('change', function(){
-    prisons.setWhere('industry_1 LIKE "%'+industry.value+'%" OR industry_2 LIKE "%'+industry.value+'%" OR industry_3 LIKE "%'+industry.value+'%" OR industry_4 LIKE "%'+industry.value+'%" OR industry_5 LIKE "%'+industry.value+'%" OR industry_6 LIKE "%'+industry.value+'%" OR industry_7 LIKE "%'+industry.value+'%" OR industry_8 LIKE "%'+industry.value+'%" OR industry_9 LIKE "%'+industry.value+'%"');
-    console.log('industry_1="'+industry.value+'"')
+    prisons.setWhere('industry_tag1 LIKE "%'+industry.value+'%" OR industry_tag2 LIKE "%'+industry.value+'%" OR industry_tag3 LIKE "%'+industry.value+'%" OR industry_tag4 LIKE "%'+industry.value+'%" OR industry_tag5 LIKE "%'+industry.value+'%"');
   });
 
+// industry.addEventListener('change', function(){
+//     prisons.setWhere( 'Industries LIKE "%'+industry.value+'%"');
+//     console.log('industry_1="'+industry.value+'"')
+//   });
 
 
 
