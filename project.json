@@ -5,8 +5,8 @@
       "path": "prisons-us-map"
     },
     "live": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects.seattletimes.com",
+      "path": "2014/sell-block/us-map"
     }
   },
   "title": "",
