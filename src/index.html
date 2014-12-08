@@ -5,35 +5,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <%= t.include("partials/_adHead.html") %>
-   
   </head>
   <body>
 
-
-
     <div id="map"></div>
     <div id="query" class="leaflet-bar">
-<label>
-  <span class="mediumheader">Prison labor industry</span><br><br>
-  <div class="lilheader">Select one:</div>
-  <select id="industry" style="">
-    <option value=''>Any</option>
-    <option value='call-center'>Call Centers</option>
-    <option value='clothing'>Clothing</option>
-    <option value='food'>Food/agriculture</option>
-    <option value='furniture'>Furniture</option>
-    <option value='plates'>License plates</option>
-    <option value='metal'>Metal</option>
-    <option value='optical'>Optical/eyeglasses</option>
-    <option value='plastic-bags'>Plastic bags</option>
-    <option value='recyle'>Recycling</option>
-    
-  </select>
-</label>
-</div>
+      <label>
+        <span class="mediumheader">Prison labor industry</span><br><br>
+        <div class="lilheader">Select one:</div>
+        <select id="industry" style="">
+          <option value=''>Any</option>
+          <option value='call-center'>Call Centers</option>
+          <option value='clothing'>Clothing</option>
+          <option value='food'>Food/agriculture</option>
+          <option value='furniture'>Furniture</option>
+          <option value='plates'>License plates</option>
+          <option value='metal'>Metal</option>
+          <option value='optical'>Optical/eyeglasses</option>
+          <option value='plastic-bags'>Plastic bags</option>
+          <option value='recyle'>Recycling</option>
+          
+        </select>
+      </label>
+    </div>
 
     <script src="app.js"></script>
-    <%= t.include("partials/_adFoot.html") %>
   </body>
 </html>

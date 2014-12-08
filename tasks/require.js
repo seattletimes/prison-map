@@ -29,6 +29,7 @@ module.exports = function(grunt) {
         pym: "lib/pym.js/src/pym",
         angular: "lib/angular/angular.min",
         leaflet: "lib/leaflet/dist/leaflet",
+        "esri-leaflet": "lib/esri-leaflet/dist/esri-leaflet",
         icanhaz: "lib/icanhaz/ICanHaz.min"
       }
     };

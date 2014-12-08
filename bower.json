@@ -1,0 +1,19 @@
+{
+  "name": "prison-map",
+  "version": "0.0.0",
+  "homepage": "https://github.com/seattletimes/prison-map",
+  "authors": [
+    "Thomas Wilburn <twilburn@seattletimes.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "leaflet.markercluster": "~0.4.0",
+    "leaflet": "~0.7.3",
+    "esri-leaflet-clustered-feature-layer": "~1.0.0-rc.4",
+    "esri-leaflet": "~1.0.0-rc.4"
+  }
+}
