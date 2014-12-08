@@ -2,7 +2,8 @@
 
 require([
   "lib/esri-leaflet-clustered-feature-layer/dist/esri-leaflet-clustered-feature-layer-src",
-  "lib/leaflet.markercluster/dist/leaflet.markercluster"
+  "lib/leaflet.markercluster/dist/leaflet.markercluster",
+  "lib/component-responsive-frame/build/responsive-child"
 ], function(ClusterLayer) {
 
   var map = L.map('map').setView([39.8282, -98.5795], 5);

@@ -14,6 +14,7 @@
     "leaflet.markercluster": "~0.4.0",
     "leaflet": "~0.7.3",
     "esri-leaflet-clustered-feature-layer": "~1.0.0-rc.4",
-    "esri-leaflet": "~1.0.0-rc.4"
+    "esri-leaflet": "~1.0.0-rc.4",
+    "component-responsive-frame": "~0.0.1"
   }
 }
