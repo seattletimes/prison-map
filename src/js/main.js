@@ -1,7 +1,7 @@
 /*global L*/
 
 require([
-  "lib/esri-leaflet-clustered-feature-layer/dist/esri-leaflet-clustered-feature-layer-src",
+  "lib/esri-leaflet-clustered-feature-layer/src/ClusteredFeatureLayer",
   "text!_popup.html",
   "lib/leaflet.markercluster/dist/leaflet.markercluster",
   "lib/component-responsive-frame/build/responsive-child"

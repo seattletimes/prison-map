@@ -2,7 +2,7 @@
   "s3": {
   "stage": {
       "bucket": "apps-stage.seattletimesdata.com",
-      "path": "prisons-us-map"
+      "path": "traumatic-cleanup/us-map"
     },
     "live": {
       "bucket": "projects.seattletimes.com",
