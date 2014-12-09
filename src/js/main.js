@@ -9,7 +9,9 @@ require([
 
   var isMobile = window.matchMedia && window.matchMedia("(max-width: 480px)").matches;
 
-  var map = L.map('map').setView([39.8282, -98.5795], isMobile ? 3 : 5);
+  var map = L.map('map', {
+    scrollWheelZoom: false
+  }).setView([39.8282, -98.5795], isMobile ? 3 : 5);
   L.esri.basemapLayer('Gray').addTo(map);
   L.esri.basemapLayer('GrayLabels').addTo(map);
 
