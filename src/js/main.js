@@ -7,7 +7,9 @@ require([
   "lib/component-responsive-frame/build/responsive-child"
 ], function(ClusterLayer, popupTemplate) {
 
-  var map = L.map('map').setView([39.8282, -98.5795], 5);
+  var isMobile = window.matchMedia && window.matchMedia("(max-width: 480px)").matches;
+
+  var map = L.map('map').setView([39.8282, -98.5795], isMobile ? 3 : 5);
   L.esri.basemapLayer('Gray').addTo(map);
   L.esri.basemapLayer('GrayLabels').addTo(map);
 

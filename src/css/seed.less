@@ -2,6 +2,7 @@
 @import "markercluster.less";
 
 @helvetica: 'Helvetica', arial, sans-serif;
+@mobile: ~"(max-width: 480px)";
 
 * {
   -webkit-box-sizing: border-box;
@@ -18,6 +19,12 @@ body {
   width: 100%;
   padding-bottom: 60%;
   font-family: @helvetica;
+
+  @media @mobile {
+    position: relative !important;
+    height: auto;
+    padding-bottom: 0;
+  }
 }
 
 #map {
@@ -26,6 +33,11 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
+
+  @media @mobile {
+    position: relative;
+    height: 300px;
+  }
 }
 
 .count-icon {
@@ -105,14 +117,6 @@ body {
       background: gray;
     }
   }
-}
-
-#map {
-  width: 100%;
-  height: 100%;
-  background-color:#ffffff;
-  padding:0;
-  margin:0;
 }
 
 .leaflet-popup-content{
@@ -243,6 +247,12 @@ body {
   z-index: 10;
   background: white;
   padding: 1em;
+
+  @media @mobile {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
 
   select {
     font-size: 16px;
