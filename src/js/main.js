@@ -22,50 +22,38 @@ require([
 
   var icons = {
     small: L.divIcon({
-    className: 'count-icon1',
-    iconSize: [15, 15]
+      className: 'count-icon1',
+      iconSize: [15, 15]
     }),
     medium: L.divIcon({
-    className: 'count-icon2',
-    iconSize: [16, 16]
+      className: 'count-icon2',
+      iconSize: [16, 16]
     }),
     large: L.divIcon({
-    className: 'count-icon3',
-    iconSize: [17, 17]
+      className: 'count-icon3',
+      iconSize: [17, 17]
     })
-   
   };
 
   var icons2 = {
     State: L.divIcon({
-    className: 'state',
-    iconSize: [15, 15]
+      className: 'state',
+      iconSize: [15, 15]
     }),
     Federal: L.divIcon({
-    className: 'federal',
-    iconSize: [15, 15]
-    }),
-   
-   
+      className: 'federal',
+      iconSize: [15, 15]
+    })
   };
 
 
   var prisons = L.esri.featureLayer('http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/US-prisons/FeatureServer/0', {
-   pointToLayer: function (geojson, latlng) {
+    pointToLayer: function (geojson, latlng) {
       return L.marker(latlng, {
         icon: icons2[geojson.properties.type]
       });
     }
   }).addTo(map);
-
-  // var prisons = L.esri.featureLayer('http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/US-prisons/FeatureServer/0', {
-  //  pointToLayer: function (geojson, latlng) {
-  //     return L.marker(latlng, {
-  //       icon: icons2[geojson.properties.type]
-  //     });
-  //   }
-  // }).addTo(map);
-
 
 
   prisons.bindPopup(function (feature) {
@@ -73,20 +61,21 @@ require([
   });
 
   var queryBox = document.querySelector("#query");
-  var industry = document.getElementById('industry');
-  industry.value = "";
+  queryBox.querySelector("input").checked = true;
 
-  industry.addEventListener('change', function(){
+  queryBox.addEventListener('change', function(){
     queryBox.className += " wait";
-    industry.disabled = true;
+    var radios = [].slice.call(queryBox.querySelectorAll("input"));
+    radios.forEach(function(r) { r.disabled = true });
     var query = [];
+    var industry = queryBox.querySelector("input:checked").value;
     for (var i = 1; i <= 5; i++) {
-      query.push("industry_tag" + i + " LIKE \"%" + industry.value + "%\"");
+      query.push("industry_tag" + i + " LIKE \"%" + industry + "%\"");
     }
     query = query.join(" OR ");
     setTimeout(function() {
       prisons.setWhere(query, function() {
-        industry.disabled = false;
+        radios.forEach(function(r) { r.disabled = false });
         queryBox.className = queryBox.className.replace(/\s?wait\s?/g, "");
       });
     });

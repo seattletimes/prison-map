@@ -10,22 +10,52 @@
 
     <div id="map"></div>
     <div id="query" class="leaflet-bar">
-      <h2 class="mediumheader">Prison labor industry</h2>
-      <div class="loading">Please wait, loading data...</div>
-      <h3 class="lilheader">Select one:</h3>
-      <select id="industry">
-        <option value=''>Any industry</option>
-        <option value='call-center'>Call Centers</option>
-        <option value='clothing'>Clothing</option>
-        <option value='food'>Food/agriculture</option>
-        <option value='furniture'>Furniture</option>
-        <option value='plates'>License plates</option>
-        <option value='metal'>Metal</option>
-        <option value='optical'>Optical/eyeglasses</option>
-        <option value='plastic-bags'>Plastic bags</option>
-        <option value='recyle'>Recycling</option>
-      </select>
-      <div style="padding:8px 0px 0px 0px"><em><small>(Does not include all industries)<small></em></div>
+      <!-- <h2 class="mediumheader">Prison labor industry</h2> -->
+      <div class="loading">Loading...</div>
+      <div class="choices">
+        <h3 class="lilheader">Select one:</h3>
+        <div class="row">
+          <input type="radio" name="industry" value='' id="any">
+          <label for="any">Any industry</label>
+        </div>
+        <div class="row">
+          <input type="radio" name="industry" value='call-center' id="call-centers">
+          <label for="call-centers">Call Centers</label>
+        </div>
+        <div class="row">
+          <input type="radio" name="industry" value='clothing' id="clothing">
+          <label for="clothing">Clothing</label>
+        </div>
+        <div class="row">
+          <input type="radio" name="industry" value='food' id="food">
+          <label for="food">Food/agriculture</label>
+        </div>
+        <div class="row">
+          <input type="radio" name="industry" value='furniture' id="furniture">
+          <label for="furniture">Furniture</label>
+        </div>
+        <div class="row">
+          <input type="radio" name="industry" value='plates' id="plates">
+          <label for="plates">License plates</label>
+        </div>
+        <div class="row">
+          <input type="radio" name="industry" value='metal' id="metal">
+          <label for="metal">Metal</label>
+        </div>
+        <div class="row">
+          <input type="radio" name="industry" value='optical' id="optical">
+          <label for="optical">Optical</label>
+        </div>
+        <div class="row">
+          <input type="radio" name="industry" value='plastic-bags' id="plastic-bags">
+          <label for="plastic-bags">Plastic bags</label>
+        </div>
+        <div class="row">
+          <input type="radio" name="industry" value='recyle' id="recycling">
+          <label for="recycling">Recycling</label>
+        </div>
+        <div class="disclaimer">(Does not include all industries)</div>
+      </div>
     </div>
     
     <script src="app.js"></script>
