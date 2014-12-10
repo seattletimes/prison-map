@@ -3,6 +3,7 @@
 require([
   "lib/esri-leaflet-clustered-feature-layer/src/ClusteredFeatureLayer",
   "text!_popup.html",
+  "leaflet",
   "lib/leaflet.markercluster/dist/leaflet.markercluster",
   "lib/component-responsive-frame/build/responsive-child"
 ], function(ClusterLayer, popupTemplate) {
@@ -20,22 +21,49 @@ require([
     iconSize: [15, 15]
   });
 
-  var prisons = new ClusterLayer(
-    'http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/prisons-updated2/FeatureServer/0', {
-    pointToLayer: function (geojson, latlng) {
+  var icons = {
+    small: L.divIcon({
+    className: 'count-icon1',
+    iconSize: [15, 15]
+    }),
+    medium: L.divIcon({
+    className: 'count-icon2',
+    iconSize: [16, 16]
+    }),
+    large: L.divIcon({
+    className: 'count-icon3',
+    iconSize: [17, 17]
+    })
+   
+  };
+
+
+  var prisons = L.esri.featureLayer('http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/US-prisons/FeatureServer/0', {
+   pointToLayer: function (geojson, latlng) {
       return L.marker(latlng, {
-        icon: icon
+        icon: icons[geojson.properties.icon_type]
       });
-    },
-    // disableClusteringAtZoom: 8,
-    polygonOptions: {
-      color: '#ffffff',
-      weight: 1,
-      opacity: 1,
-      fillOpacity: 0.5
-    },
-    maxClusterRadius:50
+    }
   }).addTo(map);
+
+
+
+  // var prisons = new ClusterLayer(
+  //   'http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/prisons-updated2/FeatureServer/0', {
+  //   pointToLayer: function (geojson, latlng) {
+  //     return L.marker(latlng, {
+  //       icon: icon
+  //     });
+  //   },
+  //   // disableClusteringAtZoom: 8,
+  //   polygonOptions: {
+  //     color: '#ffffff',
+  //     weight: 1,
+  //     opacity: 1,
+  //     fillOpacity: 0.5
+  //   },
+  //   maxClusterRadius:50
+  // }).addTo(map);
 
   prisons.bindPopup(function (feature) {
     return L.Util.template(popupTemplate, feature.properties);
