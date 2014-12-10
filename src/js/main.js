@@ -1,10 +1,9 @@
 /*global L*/
 
 require([
-  "lib/esri-leaflet-clustered-feature-layer/src/ClusteredFeatureLayer",
+  "esri-leaflet",
   "text!_popup.html",
   "leaflet",
-  "lib/leaflet.markercluster/dist/leaflet.markercluster",
   "lib/component-responsive-frame/build/responsive-child"
 ], function(ClusterLayer, popupTemplate) {
 
@@ -46,24 +45,6 @@ require([
     }
   }).addTo(map);
 
-
-
-  // var prisons = new ClusterLayer(
-  //   'http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/prisons-updated2/FeatureServer/0', {
-  //   pointToLayer: function (geojson, latlng) {
-  //     return L.marker(latlng, {
-  //       icon: icon
-  //     });
-  //   },
-  //   // disableClusteringAtZoom: 8,
-  //   polygonOptions: {
-  //     color: '#ffffff',
-  //     weight: 1,
-  //     opacity: 1,
-  //     fillOpacity: 0.5
-  //   },
-  //   maxClusterRadius:50
-  // }).addTo(map);
 
   prisons.bindPopup(function (feature) {
     return L.Util.template(popupTemplate, feature.properties);
