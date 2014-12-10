@@ -38,12 +38,12 @@ require([
 
   var icons2 = {
     State: L.divIcon({
-    className: 'state'
-    // iconSize: [15, 15]
+    className: 'state',
+    iconSize: [15, 15]
     }),
     Federal: L.divIcon({
-    className: 'federal'
-    // iconSize: [16, 16]
+    className: 'federal',
+    iconSize: [15, 15]
     }),
    
    
@@ -53,18 +53,18 @@ require([
   var prisons = L.esri.featureLayer('http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/US-prisons/FeatureServer/0', {
    pointToLayer: function (geojson, latlng) {
       return L.marker(latlng, {
-        icon: icons[geojson.properties.icon_type]
-      });
-    }
-  }).addTo(map);
-
-  var prisons = L.esri.featureLayer('http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/US-prisons/FeatureServer/0', {
-   pointToLayer: function (geojson, latlng) {
-      return L.marker(latlng, {
         icon: icons2[geojson.properties.type]
       });
     }
   }).addTo(map);
+
+  // var prisons = L.esri.featureLayer('http://services1.arcgis.com/6blDduqElOPdymTF/arcgis/rest/services/US-prisons/FeatureServer/0', {
+  //  pointToLayer: function (geojson, latlng) {
+  //     return L.marker(latlng, {
+  //       icon: icons2[geojson.properties.type]
+  //     });
+  //   }
+  // }).addTo(map);
 
 
 
