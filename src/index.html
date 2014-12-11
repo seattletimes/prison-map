@@ -11,12 +11,29 @@
     <div id="map"></div>
     <div id="query" class="leaflet-bar">
       <!-- <h2 class="mediumheader">Prison labor industry</h2> -->
+
+      <div class="dot-legend">
+        <div class="dot-container">
+          <div class="prison-type">Prison type</div>
+        </div>
+        <div class="dot-container">
+          <div class="federal"></div>
+          <div class="legend-text">Federal</div>
+        </div>
+         <div class="dot-container">
+          <div class="state"></div>
+         <div class="legend-text">State</div>
+         <span class="clear"></span>
+        </div>
+
+
+      </div>
       <div class="loading">Loading...</div>
       <div class="choices">
-        <h3 class="lilheader">Select one:</h3>
+        <div class="explore-text">Explore a sampling of industries:</div>
         <div class="row">
           <input type="radio" name="industry" value='' id="any">
-          <label for="any">Any industry</label>
+          <label for="any">All</label>
         </div>
         <div class="row">
           <input type="radio" name="industry" value='call-center' id="call-centers">
@@ -54,7 +71,7 @@
           <input type="radio" name="industry" value='recyle' id="recycling">
           <label for="recycling">Recycling</label>
         </div>
-        <div class="disclaimer">(Does not include all industries)</div>
+       <!--  <div class="disclaimer">(Does not include all industries)</div> -->
       </div>
     </div>
     
