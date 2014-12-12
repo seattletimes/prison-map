@@ -278,7 +278,6 @@ background:#CE473D;
   min-width: 240px;
   min-height:200px;
 
-
   h3 {
     margin-bottom: 8px;
   }
@@ -287,6 +286,7 @@ background:#CE473D;
     position: relative;
     top: 0;
     right: 0;
+    padding: 1em 0;
   }
 
   .loading {
@@ -300,6 +300,10 @@ background:#CE473D;
   &.wait {
     .choices { display: none; }
     .loading { display: block; }
+  }
+
+  input[type=checkbox] {
+    margin: 0;
   }
 
   .row {
