@@ -7,7 +7,7 @@ require([
   "lib/component-responsive-frame/build/responsive-child"
 ], function(ClusterLayer, popupTemplate) {
 
-  var isMobile = window.matchMedia && window.matchMedia("(max-width: 480px)").matches;
+  var isMobile = window.matchMedia && window.matchMedia("(max-width: 1024px)").matches;
 
   var map = L.map('map', {
     scrollWheelZoom: false

@@ -3,6 +3,7 @@
 
 @helvetica: 'Helvetica', arial, sans-serif;
 @mobile: ~"(max-width: 480px)";
+@tablet: ~"(max-width: 1024px)";
 
 * {
   -webkit-box-sizing: border-box;
@@ -20,7 +21,7 @@ body.container {
   padding-bottom: 60%;
   font-family: @helvetica;
 
-  @media @mobile {
+  @media @tablet {
     position: relative !important;
     height: auto;
     padding-bottom: 0;
@@ -43,7 +44,7 @@ body.container {
   right: 0;
   left: 0;
 
-  @media @mobile {
+  @media @tablet {
     position: relative;
     height: 300px;
   }
@@ -282,7 +283,7 @@ background:#CE473D;
     margin-bottom: 8px;
   }
 
-  @media @mobile {
+  @media @tablet {
     position: relative;
     top: 0;
     right: 0;
@@ -307,7 +308,7 @@ background:#CE473D;
   }
 
   .row {
-    @media @mobile {
+    @media @tablet {
       float: left;
       width: 50%;
     }
